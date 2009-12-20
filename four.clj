@@ -1,3 +1,9 @@
+(comment "
+  A palindromic number reads the same both ways. The largest palindrome made
+  from the product of two 2-digit numbers is 9009 = 91 * 99.
+
+  Find the largest palindrome made from the product of two 3-digit numbers.")
+
 (ns com.typoet.euler.four
   (:gen-class))
 
@@ -14,8 +20,5 @@
 (def palindromes
   (for [x (range 999 100 -1) y (range 999 100 -1) :when (is-palindrome? (* x y))] (* x y)))
 
-(def largest-palindrome
-  (last (sort palindromes)))
-
 (defn -main []
-  (println largest-palindrome))
+  (println (last (sort palindromes))))
